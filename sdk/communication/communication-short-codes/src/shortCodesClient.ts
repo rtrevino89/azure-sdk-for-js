@@ -1,19 +1,7 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT license.
 /// <reference lib="esnext.asynciterable" />
-
-import { isKeyCredential, parseClientArguments } from "@azure/communication-common";
-import { KeyCredential, TokenCredential, isTokenCredential } from "@azure/core-auth";
 import { CommonClientOptions, InternalClientPipelineOptions } from "@azure/core-client";
-import { PagedAsyncIterableIterator } from "@azure/core-paging";
-import { createSpan, logger } from "./utils";
-import { ShortCodesClient as ShortCodesGeneratedClient } from "./generated/src";
-import {
-  ShortCode,
-  ShortCodesUpsertUSProgramBriefOptionalParams,
-  USProgramBrief,
-} from "./generated/src/models/";
-import { SpanStatusCode } from "@azure/core-tracing";
 import {
   DeleteUSProgramBriefOptions,
   GetUSProgramBriefOptions,
@@ -21,8 +9,18 @@ import {
   ListUSProgramBriefsOptions,
   SubmitUSProgramBriefOptions,
 } from "./models";
+import { KeyCredential, TokenCredential, isTokenCredential } from "@azure/core-auth";
+import {
+  ShortCode,
+  ShortCodesUpsertUSProgramBriefOptionalParams,
+  USProgramBrief,
+} from "./generated/src/models/";
+import { createSpan, logger } from "./utils";
+import { isKeyCredential, parseClientArguments } from "@azure/communication-common";
+import { PagedAsyncIterableIterator } from "@azure/core-paging";
+import { ShortCodesClient as ShortCodesGeneratedClient } from "./generated/src";
+import { SpanStatusCode } from "@azure/core-tracing";
 import { createCommunicationAuthPolicy } from "@azure/communication-common";
-
 /**
  * Client options used to configure the ShortCodesClient API requests.
  */
